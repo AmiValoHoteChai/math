@@ -7,6 +7,41 @@
 const KEY = 'math_hub_v7';
 let data = JSON.parse(localStorage.getItem(KEY)) || {};
 
+// Video source preference (local or drive)
+const VIDEO_MODE_KEY = 'math_hub_video_mode';
+let videoMode = localStorage.getItem(VIDEO_MODE_KEY) || 'local'; // 'local' or 'drive'
+
+// Video URL mappings - local path to Google Drive URL
+const VIDEO_URLS = {
+    '2.1/Complex Variables (Concet & Math).mkv': 'https://drive.google.com/file/d/1fBMK8NLNTg58huMihkZzhiH1hSWBkTee/view',
+    '2.2/Harmonic Function Concepts.mp4': 'https://drive.google.com/file/d/1j2JUunSzYiy1H1Uk1cJ26FEf8TTxlN3g/view',
+    '2.2/Harmonic Function (Concept and Math).mp4': 'https://drive.google.com/file/d/1-mKI6eZgVTC5mHdOxOVmdkAIOJIfWaTQ/view',
+    '3.1/Fourier Series 01.mkv': null, // Local only (under 100MB)
+    '3.1/Fourier Series 02.mkv': 'https://drive.google.com/file/d/1zoVwsl-GUm6ZGXopUE8wSSbOmnQjKOO2/view',
+    '3.1/Fourier Series 03.mkv': 'https://drive.google.com/file/d/1UTCNujvNz-xkbPax9mvHg9oHlsyXP-ZG/view',
+    '3.1/Fourier Transform.mp4': 'https://drive.google.com/file/d/18Sl13FwnO-jfKSYzUXUrSETmMC5AwlAd/view'
+};
+
+// Toggle video source mode
+function toggleVideoMode() {
+    videoMode = videoMode === 'local' ? 'drive' : 'local';
+    localStorage.setItem(VIDEO_MODE_KEY, videoMode);
+    updateVideoModeUI();
+    showToast(videoMode === 'local' ? '📁 Using local videos' : '☁️ Using Google Drive');
+}
+
+// Update toggle button UI
+function updateVideoModeUI() {
+    const toggleBtn = document.getElementById('videoModeToggle');
+    const toggleText = document.getElementById('videoModeText');
+    if (toggleBtn) {
+        toggleBtn.classList.toggle('active', videoMode === 'drive');
+    }
+    if (toggleText) {
+        toggleText.textContent = videoMode === 'local' ? 'Local' : 'Drive';
+    }
+}
+
 // ========== Core Functions ==========
 
 function save() {
@@ -67,12 +102,22 @@ function openPDF(url) {
     history.pushState({ viewer: true }, '');
 }
 
-function openVideo(url) {
+function openVideo(localUrl) {
+    // Check if we should use Google Drive instead
+    const driveUrl = VIDEO_URLS[localUrl];
+
+    if (videoMode === 'drive' && driveUrl) {
+        // Open Google Drive link in new tab
+        window.open(driveUrl, '_blank');
+        return;
+    }
+
+    // Play local video
     const viewer = document.getElementById('viewer');
     const content = document.getElementById('viewer-content');
 
     content.innerHTML = `
-        <video src="${url}" controls autoplay>
+        <video src="${localUrl}" controls autoplay>
             Your browser does not support video playback.
         </video>
         <div class="keyboard-hint">
@@ -214,6 +259,7 @@ window.addEventListener('popstate', function (e) {
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
     refresh();
+    updateVideoModeUI(); // Initialize video source toggle
 
     // Add entrance animations with stagger
     const animatedElements = document.querySelectorAll('.animate-fade-in');
