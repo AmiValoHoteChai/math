@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Math Finals Study Hub - Your comprehensive resource for Semester 3 mathematics exam preparation">
+    <title>Math Finals Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Floating Math Symbols Background -->
+    <div class="math-bg" id="mathBg"></div>
+
+    <div class="app">
+        <!-- Header -->
+        <header class="header animate-fade-in">
+            <div class="logo">∑</div>
+            <h1 class="title">Math Finals</h1>
+            <p class="subtitle">Semester 3 Final Prep</p>
+        </header>
+
+        <!-- Progress Dashboard -->
+        <div class="progress-dashboard animate-fade-in delay-1">
+            <div class="progress-ring-container">
+                <svg class="progress-ring" viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="hsl(250 80% 60%)" />
+                            <stop offset="100%" stop-color="hsl(175 85% 50%)" />
+                        </linearGradient>
+                    </defs>
+                    <circle class="progress-ring-bg" cx="50" cy="50" r="45" />
+                    <circle class="progress-ring-fill" cx="50" cy="50" r="45" id="progressRing" />
+                </svg>
+                <span class="progress-percentage" id="progressPct">0%</span>
+            </div>
+            <div class="progress-info">
+                <div class="progress-title">📊 Your Progress</div>
+                <div class="progress-subtitle">
+                    <span id="s-done">0</span> of <span id="s-total">17</span> resources completed
+                </div>
+                <div class="progress-details">
+                    <div class="progress-stat">
+                        <div class="progress-stat-icon">🎬</div>
+                        <div>
+                            <div class="progress-stat-value">7</div>
+                            <div class="progress-stat-label">Videos</div>
+                        </div>
+                    </div>
+                    <div class="progress-stat">
+                        <div class="progress-stat-icon">📄</div>
+                        <div>
+                            <div class="progress-stat-value">6</div>
+                            <div class="progress-stat-label">PDFs</div>
+                        </div>
+                    </div>
+                    <div class="progress-stat">
+                        <div class="progress-stat-icon">📚</div>
+                        <div>
+                            <div class="progress-stat-value">3</div>
+                            <div class="progress-stat-label">Chapters</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chapters Section -->
+        <h2 class="section-title animate-fade-in delay-2">📚 Chapters</h2>
+        <div class="card-grid animate-fade-in delay-2">
+            <a href="chapter-21.html" class="nav-card ch21">
+                <div class="nav-icon">2.1</div>
+                <div class="nav-info">
+                    <div class="nav-title">Complex Variables</div>
+                    <div class="nav-desc">Analytic Functions & Cauchy-Riemann Equations</div>
+                    <div class="nav-progress">
+                        <div class="nav-progress-bar">
+                            <div class="nav-progress-fill" style="width: 0%" data-chapter="21"></div>
+                        </div>
+                        <span class="nav-progress-text" data-progress="21">0/4</span>
+                    </div>
+                </div>
+            </a>
+            <a href="chapter-22.html" class="nav-card ch22">
+                <div class="nav-icon">2.2</div>
+                <div class="nav-info">
+                    <div class="nav-title">Harmonic Functions</div>
+                    <div class="nav-desc">Laplace Equation & Harmonic Conjugates</div>
+                    <div class="nav-progress">
+                        <div class="nav-progress-bar">
+                            <div class="nav-progress-fill" style="width: 0%" data-chapter="22"></div>
+                        </div>
+                        <span class="nav-progress-text" data-progress="22">0/3</span>
+                    </div>
+                </div>
+            </a>
+            <a href="chapter-31.html" class="nav-card ch31">
+                <div class="nav-icon">3.1</div>
+                <div class="nav-info">
+                    <div class="nav-title">Fourier Series</div>
+                    <div class="nav-desc">Periodic Functions & Fourier Transforms</div>
+                    <div class="nav-progress">
+                        <div class="nav-progress-bar">
+                            <div class="nav-progress-fill" style="width: 0%" data-chapter="31"></div>
+                        </div>
+                        <span class="nav-progress-text" data-progress="31">0/6</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Quick Access Section -->
+        <h2 class="section-title animate-fade-in delay-3">🎬 Quick Access</h2>
+        <div class="card-grid two-col animate-fade-in delay-3">
+            <a href="videos.html" class="nav-card accent-teal">
+                <div class="nav-icon-lg">▶</div>
+                <div class="nav-info">
+                    <div class="nav-title">All Videos</div>
+                    <div class="nav-desc">7 lecture recordings</div>
+                </div>
+            </a>
+            <a href="pdfs.html" class="nav-card accent-amber">
+                <div class="nav-icon-lg">📄</div>
+                <div class="nav-info">
+                    <div class="nav-title">All PDFs</div>
+                    <div class="nav-desc">6 study notes</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer animate-fade-in delay-4">
+            <p>✨ Math Finals Hub • Semester 3 ✨</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Enhanced math background with varying sizes and opacity
+        const symbols = ['∫', '∑', '∂', '∇', 'π', '∞', 'θ', 'Δ', 'λ', 'φ', 'ω', 'σ', 'μ', 'α', 'β'];
+        const mathBg = document.getElementById('mathBg');
+
+        for (let i = 0; i < 20; i++) {
+            const span = document.createElement('span');
+            span.className = 'math-symbol';
+            span.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+            span.style.left = Math.random() * 100 + '%';
+            span.style.top = Math.random() * 100 + '%';
+            span.style.animationDelay = Math.random() * 15 + 's';
+            span.style.animationDuration = (15 + Math.random() * 15) + 's';
+            span.style.fontSize = (0.8 + Math.random() * 2) + 'rem';
+            span.style.opacity = 0.03 + Math.random() * 0.08;
+            mathBg.appendChild(span);
+        }
+
+        // Animate progress ring on load
+        function updateProgressRing() {
+            const done = parseInt(document.getElementById('s-done').textContent) || 0;
+            const total = 17;
+            const pct = Math.round((done / total) * 100);
+            const ring = document.getElementById('progressRing');
+            const pctText = document.getElementById('progressPct');
+
+            // Calculate stroke offset (circumference = 2 * PI * 45 ≈ 283)
+            const circumference = 283;
+            const offset = circumference - (pct / 100) * circumference;
+
+            ring.style.strokeDashoffset = offset;
+            pctText.textContent = pct + '%';
+        }
+
+        // Update chapter progress bars
+        function updateChapterProgress() {
+            const chapters = {
+                '21': { ids: ['21v1', '21p1', '21p2', '21p3'], total: 4 },
+                '22': { ids: ['22v1', '22v2', '22p1'], total: 3 },
+                '31': { ids: ['31v1', '31v2', '31v3', '31v4', '31p1', '31p2'], total: 6 }
+            };
+
+            for (const [ch, info] of Object.entries(chapters)) {
+                const done = info.ids.filter(id => data[id]).length;
+                const pct = Math.round((done / info.total) * 100);
+
+                const fill = document.querySelector(`[data-chapter="${ch}"]`);
+                const text = document.querySelector(`[data-progress="${ch}"]`);
+
+                if (fill) fill.style.width = pct + '%';
+                if (text) text.textContent = `${done}/${info.total}`;
+            }
+        }
+
+        // Run updates after DOM load
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(updateProgressRing, 500);
+            updateChapterProgress();
+        });
+    </script>
+</body>
+
+</html>

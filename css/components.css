@@ -1,0 +1,263 @@
+/* ============================================
+   MATH HUB - Component Library
+   Clean, minimalist UI components
+   ============================================ */
+
+/* ========== Layout ========== */
+.app {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--space-8) var(--content-padding) var(--space-16);
+}
+
+/* ========== Math Background - Subtle ========== */
+.math-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.math-symbol {
+    position: absolute;
+    font-family: var(--font-mono);
+    color: var(--primary);
+    opacity: 0.08;
+    font-size: 1.2rem;
+    animation: float 12s ease-in-out infinite;
+}
+
+/* ========== Cards ========== */
+.card {
+    background: var(--surface-1);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--duration-normal) var(--ease-out);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: var(--border-hover);
+}
+
+/* ========== Buttons ========== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-5);
+    font-weight: var(--weight-semibold);
+    font-size: var(--text-sm);
+    border-radius: var(--radius-md);
+    transition: all var(--duration-fast) var(--ease-out);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+    box-shadow: var(--shadow-primary);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: var(--surface-2);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: var(--gray-200);
+    border-color: var(--border-hover);
+}
+
+/* ========== Header ========== */
+.header {
+    text-align: center;
+    padding: var(--space-12) 0 var(--space-10);
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border-radius: var(--radius-2xl);
+    font-size: 2.2rem;
+    color: var(--white);
+    margin-bottom: var(--space-5);
+    box-shadow: var(--shadow-primary), var(--shadow-lg);
+}
+
+.title {
+    font-size: var(--text-3xl);
+    font-weight: var(--weight-extrabold);
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-2);
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: var(--text-lg);
+    font-weight: var(--weight-medium);
+}
+
+/* ========== Page Header ========== */
+.page-header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+}
+
+.page-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border-radius: var(--radius-xl);
+    font-size: var(--text-xl);
+    font-weight: var(--weight-bold);
+    color: var(--white);
+    margin-bottom: var(--space-4);
+    box-shadow: var(--shadow-primary);
+}
+
+.page-icon.accent-teal {
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+    box-shadow: 0 4px 14px hsl(170 75% 42% / 0.25);
+}
+
+.page-icon.accent-amber {
+    background: linear-gradient(135deg, var(--amber), hsl(30 90% 55%));
+    box-shadow: 0 4px 14px hsl(38 95% 55% / 0.25);
+}
+
+/* Chapter Icons */
+.page-icon.ch21 {
+    background: linear-gradient(135deg, var(--ch21-color), hsl(280 65% 60%));
+    box-shadow: 0 4px 14px hsl(270 70% 55% / 0.25);
+}
+
+.page-icon.ch22 {
+    background: linear-gradient(135deg, var(--ch22-color), hsl(210 75% 55%));
+    box-shadow: 0 4px 14px hsl(200 80% 50% / 0.25);
+}
+
+.page-icon.ch31 {
+    background: linear-gradient(135deg, var(--ch31-color), hsl(165 65% 48%));
+    box-shadow: 0 4px 14px hsl(155 70% 42% / 0.25);
+}
+
+.page-title {
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-bold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-1);
+}
+
+.page-subtitle {
+    color: var(--text-muted);
+    font-size: var(--text-base);
+}
+
+/* ========== Breadcrumb ========== */
+.breadcrumb {
+    margin-bottom: var(--space-6);
+}
+
+.breadcrumb a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--text-muted);
+    font-weight: var(--weight-medium);
+    font-size: var(--text-sm);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    transition: all var(--duration-fast) var(--ease-out);
+}
+
+.breadcrumb a:hover {
+    color: var(--primary);
+    background: var(--primary-soft);
+}
+
+/* ========== Stats ========== */
+.stats {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-10);
+}
+
+.stat {
+    background: var(--surface-1);
+    border: 1px solid var(--border-color);
+    padding: var(--space-4) var(--space-6);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    min-width: 100px;
+    box-shadow: var(--shadow-xs);
+    transition: all var(--duration-normal) var(--ease-out);
+}
+
+.stat:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+}
+
+.stat-num {
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-bold);
+    color: var(--primary);
+    display: block;
+}
+
+.stat-label {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: var(--weight-semibold);
+    margin-top: var(--space-1);
+}
+
+/* ========== Section Title ========== */
+.section-title {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    color: var(--text-muted);
+    margin: var(--space-8) 0 var(--space-4);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-color);
+}
+
+/* ========== Footer ========== */
+.footer {
+    text-align: center;
+    padding-top: var(--space-12);
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+}

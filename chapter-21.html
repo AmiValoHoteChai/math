@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chapter 2.1 - Complex Variables: Analytic Functions and Cauchy-Riemann Equations">
+    <title>Chapter 2.1 | Math Finals</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="math-bg" id="mathBg"></div>
+    <div class="app">
+        <nav class="breadcrumb animate-fade-in">
+            <a href="index.html">← Back to Home</a>
+        </nav>
+
+        <header class="page-header animate-fade-in delay-1">
+            <div class="page-icon ch21">2.1</div>
+            <h1 class="page-title">Complex Variables</h1>
+            <p class="page-subtitle">Analytic Functions & Cauchy-Riemann Equations</p>
+            <div class="chapter-stats">
+                <span class="chapter-stat">
+                    <span class="chapter-stat-icon">🎬</span> 1 Video
+                </span>
+                <span class="chapter-stat">
+                    <span class="chapter-stat-icon">📄</span> 3 PDFs
+                </span>
+                <span class="chapter-stat">
+                    <span class="chapter-stat-icon">✅</span> <span id="s-done">0</span>/<span id="s-total">4</span> Done
+                </span>
+            </div>
+        </header>
+
+        <div class="notes-box animate-fade-in delay-2">
+            <div class="notes-title">📌 Key Formulas</div>
+            <div class="formula">
+                <strong>Cauchy-Riemann Equations:</strong><br>
+                ∂u/∂x = ∂v/∂y &nbsp;&amp;&nbsp; ∂u/∂y = −∂v/∂x<br><br>
+                <strong>Harmonic Condition:</strong><br>
+                ∂²u/∂x² + ∂²u/∂y² = 0<br><br>
+                <strong>Analyticity:</strong> f(z) is analytic if C-R equations hold and partials are continuous.
+            </div>
+        </div>
+
+        <h2 class="section-title animate-fade-in delay-2">🎬 Videos</h2>
+        <div class="resources animate-fade-in delay-2">
+            <div class="res-item" data-id="21v1">
+                <div class="checkbox" onclick="toggle('21v1')"></div>
+                <div class="res-info">
+                    <div class="res-name">Complex Variables Lecture</div>
+                    <div class="res-meta">MKV Video • Full Lecture</div>
+                </div>
+                <button class="btn-open" onclick="openVideo('2.1/Complex Variables (Concet & Math).mkv')">▶
+                    Play</button>
+            </div>
+        </div>
+
+        <h2 class="section-title animate-fade-in delay-3">📄 PDFs</h2>
+        <div class="resources animate-fade-in delay-3">
+            <div class="res-item" data-id="21p1">
+                <div class="checkbox" onclick="toggle('21p1')"></div>
+                <div class="res-info">
+                    <div class="res-name">Part 01 - Theory</div>
+                    <div class="res-meta">PDF Notes • Fundamentals</div>
+                </div>
+                <button class="btn-open" onclick="openPDF('2.1/6.1 Complex Variables Part 01.pdf')">Open</button>
+            </div>
+            <div class="res-item" data-id="21p2">
+                <div class="checkbox" onclick="toggle('21p2')"></div>
+                <div class="res-info">
+                    <div class="res-name">Part 02 - Examples</div>
+                    <div class="res-meta">PDF Notes • Worked Examples</div>
+                </div>
+                <button class="btn-open" onclick="openPDF('2.1/6.2 Complex Variables Part 02.pdf')">Open</button>
+            </div>
+            <div class="res-item" data-id="21p3">
+                <div class="checkbox" onclick="toggle('21p3')"></div>
+                <div class="res-info">
+                    <div class="res-name">Part 03 - Advanced</div>
+                    <div class="res-meta">PDF Notes • Advanced Topics</div>
+                </div>
+                <button class="btn-open" onclick="openPDF('2.1/6.3 Complex Variables Part 03.pdf')">Open</button>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Chapter 2.1 • Complex Variables</p>
+        </footer>
+    </div>
+
+    <div id="viewer" class="viewer" onclick="if(event.target === this) closeViewer()">
+        <div class="viewer-content" id="viewer-content"></div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        const symbols = ['∫', '∑', '∂', 'π', 'i', 'z', 'f'];
+        const mathBg = document.getElementById('mathBg');
+        for (let i = 0; i < 12; i++) {
+            const span = document.createElement('span');
+            span.className = 'math-symbol';
+            span.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+            span.style.left = Math.random() * 100 + '%';
+            span.style.top = Math.random() * 100 + '%';
+            span.style.animationDelay = Math.random() * 15 + 's';
+            span.style.animationDuration = (15 + Math.random() * 10) + 's';
+            span.style.fontSize = (0.8 + Math.random() * 1.5) + 'rem';
+            mathBg.appendChild(span);
+        }
+    </script>
+</body>
+
+</html>

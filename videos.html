@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="All Video Lectures for Math Finals - 7 comprehensive lecture recordings">
+    <title>Videos | Math Finals</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="math-bg" id="mathBg"></div>
+    <div class="app">
+        <nav class="breadcrumb animate-fade-in">
+            <a href="index.html">← Back to Home</a>
+        </nav>
+
+        <header class="page-header animate-fade-in delay-1">
+            <div class="page-icon accent-teal">▶</div>
+            <h1 class="page-title">All Videos</h1>
+            <p class="page-subtitle">7 Lecture Recordings</p>
+        </header>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs animate-fade-in delay-1">
+            <button class="filter-tab active" onclick="filterVideos('all')">All</button>
+            <button class="filter-tab" onclick="filterVideos('21')">Ch 2.1</button>
+            <button class="filter-tab" onclick="filterVideos('22')">Ch 2.2</button>
+            <button class="filter-tab" onclick="filterVideos('31')">Ch 3.1</button>
+        </div>
+
+        <div class="video-grid animate-fade-in delay-2" id="videoGrid">
+            <!-- Chapter 2.1 -->
+            <div class="video-card" data-chapter="21" onclick="openVideo('2.1/Complex Variables (Concet & Math).mkv')">
+                <div class="video-thumb">
+                    <span class="play-icon">▶</span>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">Complex Variables Lecture</div>
+                    <div class="video-meta">
+                        <span class="video-badge">Ch 2.1</span>
+                        <span>MKV</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapter 2.2 -->
+            <div class="video-card" data-chapter="22" onclick="openVideo('2.2/Harmonic Function Concepts.mp4')">
+                <div class="video-thumb">
+                    <span class="play-icon">▶</span>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">Harmonic Concepts</div>
+                    <div class="video-meta">
+                        <span class="video-badge">Ch 2.2</span>
+                        <span>MP4</span>
+                    </div>
+                </div>
+            </div>
+            <div class="video-card" data-chapter="22"
+                onclick="openVideo('2.2/Harmonic Function (Concept and Math).mp4')">
+                <div class="video-thumb">
+                    <span class="play-icon">▶</span>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">Harmonic Concept & Math</div>
+                    <div class="video-meta">
+                        <span class="video-badge">Ch 2.2</span>
+                        <span>MP4</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapter 3.1 -->
+            <div class="video-card" data-chapter="31" onclick="openVideo('3.1/Fourier Series 01.mkv')">
+                <div class="video-thumb">
+                    <span class="play-icon">▶</span>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">Fourier Series 01</div>
+                    <div class="video-meta">
+                        <span class="video-badge">Ch 3.1</span>
+                        <span>MKV</span>
+                    </div>
+                </div>
+            </div>
+            <div class="video-card" data-chapter="31" onclick="openVideo('3.1/Fourier Series 02.mkv')">
+                <div class="video-thumb">
+                    <span class="play-icon">▶</span>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">Fourier Series 02</div>
+                    <div class="video-meta">
+                        <span class="video-badge">Ch 3.1</span>
+                        <span>MKV</span>
+                    </div>
+                </div>
+            </div>
+            <div class="video-card" data-chapter="31" onclick="openVideo('3.1/Fourier Series 03.mkv')">
+                <div class="video-thumb">
+                    <span class="play-icon">▶</span>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">Fourier Series 03</div>
+                    <div class="video-meta">
+                        <span class="video-badge">Ch 3.1</span>
+                        <span>MKV</span>
+                    </div>
+                </div>
+            </div>
+            <div class="video-card" data-chapter="31" onclick="openVideo('3.1/Fourier Transform.mp4')">
+                <div class="video-thumb">
+                    <span class="play-icon">▶</span>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">Fourier Transform</div>
+                    <div class="video-meta">
+                        <span class="video-badge">Ch 3.1</span>
+                        <span>MP4</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Videos Library • Math Finals</p>
+        </footer>
+    </div>
+
+    <div id="viewer" class="viewer" onclick="if(event.target === this) closeViewer()">
+        <div class="viewer-content" id="viewer-content"></div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        const symbols = ['▶', '∫', '∑', 'π', '∞'];
+        const mathBg = document.getElementById('mathBg');
+        for (let i = 0; i < 15; i++) {
+            const span = document.createElement('span');
+            span.className = 'math-symbol';
+            span.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+            span.style.left = Math.random() * 100 + '%';
+            span.style.top = Math.random() * 100 + '%';
+            span.style.animationDelay = Math.random() * 15 + 's';
+            span.style.animationDuration = (15 + Math.random() * 10) + 's';
+            span.style.fontSize = (0.8 + Math.random() * 1.5) + 'rem';
+            mathBg.appendChild(span);
+        }
+
+        // Filter functionality
+        function filterVideos(chapter) {
+            const cards = document.querySelectorAll('.video-card');
+            const tabs = document.querySelectorAll('.filter-tab');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if (chapter === 'all' || card.dataset.chapter === chapter) {
+                    card.style.display = '';
+                    card.style.animation = 'fade-in-scale 0.3s ease forwards';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

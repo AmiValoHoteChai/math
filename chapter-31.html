@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chapter 3.1 - Fourier Series: Periodic Functions and Fourier Transforms">
+    <title>Chapter 3.1 | Math Finals</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="math-bg" id="mathBg"></div>
+    <div class="app">
+        <nav class="breadcrumb animate-fade-in">
+            <a href="index.html">← Back to Home</a>
+        </nav>
+
+        <header class="page-header animate-fade-in delay-1">
+            <div class="page-icon ch31">3.1</div>
+            <h1 class="page-title">Fourier Series</h1>
+            <p class="page-subtitle">Periodic Functions & Fourier Transforms</p>
+            <div class="chapter-stats">
+                <span class="chapter-stat">
+                    <span class="chapter-stat-icon">🎬</span> 4 Videos
+                </span>
+                <span class="chapter-stat">
+                    <span class="chapter-stat-icon">📄</span> 2 PDFs
+                </span>
+                <span class="chapter-stat">
+                    <span class="chapter-stat-icon">✅</span> <span id="s-done">0</span>/<span id="s-total">6</span> Done
+                </span>
+            </div>
+        </header>
+
+        <div class="notes-box animate-fade-in delay-2">
+            <div class="notes-title">📌 Key Formulas</div>
+            <div class="formula">
+                <strong>Fourier Series:</strong><br>
+                f(x) = a₀/2 + Σ(aₙcos(nπx/L) + bₙsin(nπx/L))<br><br>
+                <strong>Fourier Coefficients:</strong><br>
+                a₀ = (1/L) ∫₋ₗᴸ f(x) dx<br>
+                aₙ = (1/L) ∫₋ₗᴸ f(x) cos(nπx/L) dx<br>
+                bₙ = (1/L) ∫₋ₗᴸ f(x) sin(nπx/L) dx<br><br>
+                <strong>Dirichlet Conditions:</strong> Periodic, piecewise continuous, finite discontinuities.
+            </div>
+        </div>
+
+        <h2 class="section-title animate-fade-in delay-2">🎬 Videos</h2>
+        <div class="resources animate-fade-in delay-2">
+            <div class="res-item" data-id="31v1">
+                <div class="checkbox" onclick="toggle('31v1')"></div>
+                <div class="res-info">
+                    <div class="res-name">Fourier Series 01</div>
+                    <div class="res-meta">MKV Video • Introduction</div>
+                </div>
+                <button class="btn-open" onclick="openVideo('3.1/Fourier Series 01.mkv')">▶ Play</button>
+            </div>
+            <div class="res-item" data-id="31v2">
+                <div class="checkbox" onclick="toggle('31v2')"></div>
+                <div class="res-info">
+                    <div class="res-name">Fourier Series 02</div>
+                    <div class="res-meta">MKV Video • Continuation</div>
+                </div>
+                <button class="btn-open" onclick="openVideo('3.1/Fourier Series 02.mkv')">▶ Play</button>
+            </div>
+            <div class="res-item" data-id="31v3">
+                <div class="checkbox" onclick="toggle('31v3')"></div>
+                <div class="res-info">
+                    <div class="res-name">Fourier Series 03</div>
+                    <div class="res-meta">MKV Video • Advanced</div>
+                </div>
+                <button class="btn-open" onclick="openVideo('3.1/Fourier Series 03.mkv')">▶ Play</button>
+            </div>
+            <div class="res-item" data-id="31v4">
+                <div class="checkbox" onclick="toggle('31v4')"></div>
+                <div class="res-info">
+                    <div class="res-name">Fourier Transform</div>
+                    <div class="res-meta">MP4 Video • Transforms</div>
+                </div>
+                <button class="btn-open" onclick="openVideo('3.1/Fourier Transform.mp4')">▶ Play</button>
+            </div>
+        </div>
+
+        <h2 class="section-title animate-fade-in delay-3">📄 PDFs</h2>
+        <div class="resources animate-fade-in delay-3">
+            <div class="res-item" data-id="31p1">
+                <div class="checkbox" onclick="toggle('31p1')"></div>
+                <div class="res-info">
+                    <div class="res-name">Part 01 - Basics</div>
+                    <div class="res-meta">PDF Notes • Fundamentals</div>
+                </div>
+                <button class="btn-open" onclick="openPDF('3.1/8.1 Fourier Series Part 01 (1).pdf')">Open</button>
+            </div>
+            <div class="res-item" data-id="31p2">
+                <div class="checkbox" onclick="toggle('31p2')"></div>
+                <div class="res-info">
+                    <div class="res-name">Part 02 - Applications</div>
+                    <div class="res-meta">PDF Notes • Applications</div>
+                </div>
+                <button class="btn-open" onclick="openPDF('3.1/8.2 Fourier Series Part 02 (1).pdf')">Open</button>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Chapter 3.1 • Fourier Series</p>
+        </footer>
+    </div>
+
+    <div id="viewer" class="viewer" onclick="if(event.target === this) closeViewer()">
+        <div class="viewer-content" id="viewer-content"></div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        const symbols = ['∫', '∑', 'sin', 'cos', 'π', 'ω', 'n'];
+        const mathBg = document.getElementById('mathBg');
+        for (let i = 0; i < 12; i++) {
+            const span = document.createElement('span');
+            span.className = 'math-symbol';
+            span.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+            span.style.left = Math.random() * 100 + '%';
+            span.style.top = Math.random() * 100 + '%';
+            span.style.animationDelay = Math.random() * 15 + 's';
+            span.style.animationDuration = (15 + Math.random() * 10) + 's';
+            span.style.fontSize = (0.8 + Math.random() * 1.5) + 'rem';
+            mathBg.appendChild(span);
+        }
+    </script>
+</body>
+
+</html>

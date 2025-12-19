@@ -1,0 +1,252 @@
+/* ============================================
+   MATH HUB - Main Stylesheet
+   Premium Minimalist Theme
+   ============================================ */
+
+/* Core Design System */
+@import url('css/variables.css');
+@import url('css/animations.css');
+
+/* UI Components */
+@import url('css/components.css');
+@import url('css/cards.css');
+@import url('css/viewer.css');
+
+/* ============================================
+   Page-Specific Styles
+   ============================================ */
+
+/* ========== Progress Dashboard ========== */
+.progress-dashboard {
+    background: var(--surface-1);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-8);
+    margin-bottom: var(--space-8);
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    box-shadow: var(--shadow-md);
+}
+
+.progress-ring-container {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.progress-ring {
+    width: 100px;
+    height: 100px;
+    transform: rotate(-90deg);
+}
+
+.progress-ring-bg {
+    fill: none;
+    stroke: var(--gray-200);
+    stroke-width: 8;
+}
+
+.progress-ring-fill {
+    fill: none;
+    stroke: url(#progressGradient);
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 283;
+    stroke-dashoffset: 283;
+    transition: stroke-dashoffset 1s var(--ease-out);
+}
+
+.progress-percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: var(--text-xl);
+    font-weight: var(--weight-bold);
+    color: var(--primary);
+}
+
+.progress-info {
+    flex: 1;
+}
+
+.progress-title {
+    font-size: var(--text-lg);
+    font-weight: var(--weight-semibold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-1);
+}
+
+.progress-subtitle {
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-4);
+}
+
+.progress-details {
+    display: flex;
+    gap: var(--space-6);
+}
+
+.progress-stat {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.progress-stat-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--gray-100);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-sm);
+}
+
+.progress-stat-value {
+    font-weight: var(--weight-bold);
+    color: var(--text-primary);
+}
+
+.progress-stat-label {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+}
+
+/* ========== Chapter Stats ========== */
+.chapter-stats {
+    display: flex;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.chapter-stat {
+    background: var(--gray-100);
+    border-radius: var(--radius-full);
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.chapter-stat-icon {
+    font-size: var(--text-sm);
+}
+
+/* ========== Filter Tabs ========== */
+.filter-tabs {
+    display: flex;
+    gap: var(--space-2);
+    margin-bottom: var(--space-6);
+    flex-wrap: wrap;
+}
+
+.filter-tab {
+    background: var(--surface-1);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    transition: all var(--duration-fast) var(--ease-out);
+}
+
+.filter-tab:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.filter-tab.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--white);
+    box-shadow: var(--shadow-primary);
+}
+
+/* ========== Toast Notifications ========== */
+.toast {
+    position: fixed;
+    bottom: var(--space-6);
+    right: var(--space-6);
+    background: var(--surface-1);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4) var(--space-6);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    z-index: var(--z-modal);
+    box-shadow: var(--shadow-xl);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all var(--duration-normal) var(--ease-spring);
+}
+
+.toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.toast-icon {
+    font-size: var(--text-lg);
+}
+
+.toast-message {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    color: var(--text-primary);
+}
+
+.toast.success {
+    border-left: 3px solid var(--emerald);
+}
+
+.toast.success .toast-icon {
+    color: var(--emerald);
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+    .progress-dashboard {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--space-6);
+    }
+
+    .progress-ring {
+        width: 80px;
+        height: 80px;
+    }
+
+    .progress-details {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: var(--space-8) 0 var(--space-6);
+    }
+
+    .logo {
+        width: 64px;
+        height: 64px;
+        font-size: 1.8rem;
+    }
+
+    .title {
+        font-size: var(--text-2xl);
+    }
+
+    .filter-tabs {
+        justify-content: center;
+    }
+}

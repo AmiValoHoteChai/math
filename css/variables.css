@@ -1,0 +1,230 @@
+/* ============================================
+   MATH HUB - Design System Variables
+   Premium Minimalist Theme - Clean & Professional
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    /* ========== Color System - Clean & Professional ========== */
+
+    /* Primary Blue - Trustworthy & Calm */
+    --primary: hsl(220 85% 55%);
+    --primary-light: hsl(220 85% 65%);
+    --primary-dark: hsl(220 85% 45%);
+    --primary-soft: hsl(220 85% 96%);
+    --primary-glow: hsl(220 100% 55% / 0.15);
+
+    /* Secondary Teal - Fresh Accent */
+    --secondary: hsl(170 75% 42%);
+    --secondary-light: hsl(170 75% 52%);
+    --secondary-soft: hsl(170 75% 95%);
+    --secondary-glow: hsl(170 100% 42% / 0.15);
+
+    /* Accent Colors */
+    --amber: hsl(38 95% 55%);
+    --amber-soft: hsl(38 95% 95%);
+    --rose: hsl(350 85% 58%);
+    --emerald: hsl(155 70% 45%);
+    --emerald-soft: hsl(155 70% 95%);
+
+    /* Neutral Colors - Warm Grays */
+    --white: hsl(0 0% 100%);
+    --gray-50: hsl(220 20% 98%);
+    --gray-100: hsl(220 15% 95%);
+    --gray-200: hsl(220 15% 90%);
+    --gray-300: hsl(220 12% 82%);
+    --gray-400: hsl(220 10% 65%);
+    --gray-500: hsl(220 10% 50%);
+    --gray-600: hsl(220 12% 40%);
+    --gray-700: hsl(220 15% 28%);
+    --gray-800: hsl(220 18% 18%);
+    --gray-900: hsl(220 20% 10%);
+
+    /* Background & Surface */
+    --bg-base: var(--gray-50);
+    --bg-elevated: var(--white);
+    --surface-1: var(--white);
+    --surface-2: var(--gray-100);
+    --border-color: var(--gray-200);
+    --border-hover: var(--gray-300);
+
+    /* Text Colors */
+    --text-primary: var(--gray-900);
+    --text-secondary: var(--gray-600);
+    --text-muted: var(--gray-500);
+    --text-dim: var(--gray-400);
+
+    /* Chapter Colors - Distinct but Harmonious */
+    --ch21-color: hsl(270 70% 55%);
+    --ch21-soft: hsl(270 70% 95%);
+    --ch21-border: hsl(270 70% 85%);
+
+    --ch22-color: hsl(200 80% 50%);
+    --ch22-soft: hsl(200 80% 95%);
+    --ch22-border: hsl(200 80% 85%);
+
+    --ch31-color: hsl(155 70% 42%);
+    --ch31-soft: hsl(155 70% 95%);
+    --ch31-border: hsl(155 70% 85%);
+
+    /* ========== Typography ========== */
+    --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+    /* Font Sizes */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 2rem;
+    --text-4xl: 2.5rem;
+
+    /* Font Weights */
+    --weight-normal: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    --weight-extrabold: 800;
+
+    /* ========== Spacing ========== */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+
+    /* ========== Border Radius ========== */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-xl: 20px;
+    --radius-2xl: 28px;
+    --radius-full: 9999px;
+
+    /* ========== Shadows - Soft & Elegant ========== */
+    --shadow-xs: 0 1px 2px hsl(220 20% 20% / 0.04);
+    --shadow-sm: 0 2px 4px hsl(220 20% 20% / 0.06);
+    --shadow-md: 0 4px 12px hsl(220 20% 20% / 0.08);
+    --shadow-lg: 0 8px 24px hsl(220 20% 20% / 0.1);
+    --shadow-xl: 0 16px 40px hsl(220 20% 20% / 0.12);
+    --shadow-primary: 0 4px 14px hsl(220 85% 55% / 0.25);
+
+    /* ========== Animation ========== */
+    --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+    --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+    --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --duration-fast: 150ms;
+    --duration-normal: 250ms;
+    --duration-slow: 400ms;
+
+    /* ========== Z-Index Scale ========== */
+    --z-base: 0;
+    --z-elevated: 10;
+    --z-sticky: 100;
+    --z-overlay: 500;
+    --z-modal: 1000;
+
+    /* ========== Layout ========== */
+    --max-width: 960px;
+    --content-padding: clamp(1rem, 3vw, 2rem);
+}
+
+/* ========== Base Reset ========== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: var(--weight-normal);
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: var(--bg-base);
+    min-height: 100vh;
+}
+
+/* Subtle gradient background */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 100% 100% at 70% 0%, hsl(220 60% 95%) 0%, transparent 50%),
+        radial-gradient(ellipse 80% 80% at 0% 100%, hsl(170 60% 95%) 0%, transparent 40%),
+        var(--bg-base);
+    z-index: -1;
+    pointer-events: none;
+}
+
+::selection {
+    background: var(--primary-light);
+    color: var(--white);
+}
+
+:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gray-300);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gray-400);
+}

@@ -1,0 +1,176 @@
+/* ============================================
+   MATH HUB - Animation Library
+   Clean, subtle animations for minimalist theme
+   ============================================ */
+
+/* ========== Keyframes ========== */
+
+/* Gentle Float - Math Symbols */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.15;
+    }
+
+    50% {
+        transform: translateY(-12px);
+        opacity: 0.25;
+    }
+}
+
+/* Subtle Pulse */
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+/* Fade In Up - Entry animation */
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade In Scale */
+@keyframes fade-in-scale {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Slide In */
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Draw Progress Ring */
+@keyframes draw-ring {
+    from {
+        stroke-dashoffset: 283;
+    }
+}
+
+/* Check Pop */
+@keyframes check-pop {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Shimmer for gradients */
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+/* Rotate */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ========== Animation Utility Classes ========== */
+
+.animate-fade-in {
+    animation: fade-in-up 0.5s var(--ease-out) forwards;
+    opacity: 0;
+}
+
+.animate-scale-in {
+    animation: fade-in-scale 0.4s var(--ease-out) forwards;
+    opacity: 0;
+}
+
+.animate-slide-in {
+    animation: slide-in 0.4s var(--ease-out) forwards;
+    opacity: 0;
+}
+
+/* Staggered Delays */
+.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.delay-2 {
+    animation-delay: 0.15s;
+}
+
+.delay-3 {
+    animation-delay: 0.2s;
+}
+
+.delay-4 {
+    animation-delay: 0.25s;
+}
+
+.delay-5 {
+    animation-delay: 0.3s;
+}
+
+/* Continuous */
+.animate-float {
+    animation: float 8s ease-in-out infinite;
+}
+
+.animate-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

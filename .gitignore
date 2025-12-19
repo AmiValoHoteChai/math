@@ -1,0 +1,10 @@
+# Ignore video and large media files
+*.mkv
+*.mp4
+
+# Ignore PDFs (will upload separately)
+*.pdf
+
+# System files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chapter 2.2 - Harmonic Functions: Laplace Equation and Harmonic Conjugates">
+    <title>Chapter 2.2 | Math Finals</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="math-bg" id="mathBg"></div>
+    <div class="app">
+        <nav class="breadcrumb animate-fade-in">
+            <a href="index.html">← Back to Home</a>
+        </nav>
+
+        <header class="page-header animate-fade-in delay-1">
+            <div class="page-icon ch22">2.2</div>
+            <h1 class="page-title">Harmonic Functions</h1>
+            <p class="page-subtitle">Laplace Equation & Harmonic Conjugates</p>
+            <div class="chapter-stats">
+                <span class="chapter-stat">
+                    <span class="chapter-stat-icon">🎬</span> 2 Videos
+                </span>
+                <span class="chapter-stat">
+                    <span class="chapter-stat-icon">📄</span> 1 PDF
+                </span>
+                <span class="chapter-stat">
+                    <span class="chapter-stat-icon">✅</span> <span id="s-done">0</span>/<span id="s-total">3</span> Done
+                </span>
+            </div>
+        </header>
+
+        <div class="notes-box animate-fade-in delay-2">
+            <div class="notes-title">📌 Key Formulas</div>
+            <div class="formula">
+                <strong>Laplace Equation:</strong><br>
+                ∇²u = ∂²u/∂x² + ∂²u/∂y² = 0<br><br>
+                <strong>Harmonic Conjugate:</strong><br>
+                If u is harmonic, find v such that f(z) = u + iv is analytic<br><br>
+                <strong>Finding v:</strong> Use C-R equations: ∂v/∂y = ∂u/∂x, ∂v/∂x = -∂u/∂y
+            </div>
+        </div>
+
+        <h2 class="section-title animate-fade-in delay-2">🎬 Videos</h2>
+        <div class="resources animate-fade-in delay-2">
+            <div class="res-item" data-id="22v1">
+                <div class="checkbox" onclick="toggle('22v1')"></div>
+                <div class="res-info">
+                    <div class="res-name">Harmonic Function Concepts</div>
+                    <div class="res-meta">MP4 Video • Introduction</div>
+                </div>
+                <button class="btn-open" onclick="openVideo('2.2/Harmonic Function Concepts.mp4')">▶ Play</button>
+            </div>
+            <div class="res-item" data-id="22v2">
+                <div class="checkbox" onclick="toggle('22v2')"></div>
+                <div class="res-info">
+                    <div class="res-name">Harmonic Concept & Math</div>
+                    <div class="res-meta">MP4 Video • Detailed Explanation</div>
+                </div>
+                <button class="btn-open" onclick="openVideo('2.2/Harmonic Function (Concept and Math).mp4')">▶
+                    Play</button>
+            </div>
+        </div>
+
+        <h2 class="section-title animate-fade-in delay-3">📄 PDFs</h2>
+        <div class="resources animate-fade-in delay-3">
+            <div class="res-item" data-id="22p1">
+                <div class="checkbox" onclick="toggle('22p1')"></div>
+                <div class="res-info">
+                    <div class="res-name">Harmonic Functions</div>
+                    <div class="res-meta">PDF Notes • Complete Notes</div>
+                </div>
+                <button class="btn-open" onclick="openPDF('2.2/7.0 Harmonic Functions.pdf')">Open</button>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Chapter 2.2 • Harmonic Functions</p>
+        </footer>
+    </div>
+
+    <div id="viewer" class="viewer" onclick="if(event.target === this) closeViewer()">
+        <div class="viewer-content" id="viewer-content"></div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        const symbols = ['∇', '∂', 'Δ', 'u', 'v', '∫'];
+        const mathBg = document.getElementById('mathBg');
+        for (let i = 0; i < 12; i++) {
+            const span = document.createElement('span');
+            span.className = 'math-symbol';
+            span.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+            span.style.left = Math.random() * 100 + '%';
+            span.style.top = Math.random() * 100 + '%';
+            span.style.animationDelay = Math.random() * 15 + 's';
+            span.style.animationDuration = (15 + Math.random() * 10) + 's';
+            span.style.fontSize = (0.8 + Math.random() * 1.5) + 'rem';
+            mathBg.appendChild(span);
+        }
+    </script>
+</body>
+
+</html>
