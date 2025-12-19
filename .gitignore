@@ -1,9 +1,10 @@
-# Ignore video and large media files
-*.mkv
-*.mp4
-
-# Ignore PDFs (will upload separately)
-*.pdf
+# Ignore large video files (over 100MB)
+2.1/Complex Variables (Concet & Math).mkv
+2.2/Harmonic Function (Concept and Math).mp4
+2.2/Harmonic Function Concepts.mp4
+3.1/Fourier Series 02.mkv
+3.1/Fourier Series 03.mkv
+3.1/Fourier Transform.mp4
 
 # System files
 .DS_Store
