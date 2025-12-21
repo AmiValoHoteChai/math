@@ -304,6 +304,7 @@
     padding: var(--space-4) var(--space-5);
     box-shadow: var(--shadow-xs);
     transition: all var(--duration-normal) var(--ease-out);
+    cursor: pointer;
 }
 
 .res-item:hover {

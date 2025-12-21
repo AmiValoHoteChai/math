@@ -50,7 +50,7 @@
             <div class="progress-info">
                 <div class="progress-title">📊 Your Progress</div>
                 <div class="progress-subtitle">
-                    <span id="s-done">0</span> of <span id="s-total">17</span> resources completed
+                    <span id="s-done">0</span> of <span id="s-total">13</span> resources completed
                 </div>
                 <div class="progress-details">
                     <div class="progress-stat">
@@ -168,9 +168,21 @@
 
         // Animate progress ring on load
         function updateProgressRing() {
-            const done = parseInt(document.getElementById('s-done').textContent) || 0;
-            const total = 17;
+            // Calculate done count from localStorage data
+            const allIds = [
+                '21v1', '21p1', '21p2', '21p3',          // Chapter 2.1
+                '22v1', '22v2', '22p1',                   // Chapter 2.2
+                '31v1', '31v2', '31v3', '31v4', '31p1', '31p2'  // Chapter 3.1
+            ];
+
+            const done = allIds.filter(id => data[id]).length;
+            const total = allIds.length;
             const pct = Math.round((done / total) * 100);
+
+            // Update the done counter display
+            const doneEl = document.getElementById('s-done');
+            if (doneEl) doneEl.textContent = done;
+
             const ring = document.getElementById('progressRing');
             const pctText = document.getElementById('progressPct');
 

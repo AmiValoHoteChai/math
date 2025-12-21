@@ -148,11 +148,11 @@ function openVideo(localUrl) {
             }
             if (e.key === 'ArrowLeft') {
                 e.preventDefault();
-                video.currentTime -= 10;
+                video.currentTime -= 5;
             }
             if (e.key === 'ArrowRight') {
                 e.preventDefault();
-                video.currentTime += 10;
+                video.currentTime += 5;
             }
         });
     }
@@ -246,6 +246,26 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
         closeViewer();
     }
+
+    // Global video controls when viewer is open
+    const viewer = document.getElementById('viewer');
+    if (viewer && viewer.classList.contains('open')) {
+        const video = viewer.querySelector('video');
+        if (video) {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                video.currentTime -= 5;
+            }
+            if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                video.currentTime += 5;
+            }
+            if (e.key === ' ') {
+                e.preventDefault();
+                video.paused ? video.play() : video.pause();
+            }
+        }
+    }
 });
 
 // History navigation (back button closes viewer)
@@ -265,6 +285,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const animatedElements = document.querySelectorAll('.animate-fade-in');
     animatedElements.forEach((el, index) => {
         el.style.animationDelay = `${index * 0.1}s`;
+    });
+
+    // Add click-to-toggle for resource items (except buttons)
+    document.querySelectorAll('.res-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+            // Don't toggle if clicking on a button or the checkbox itself
+            if (e.target.closest('button') || e.target.closest('.checkbox')) {
+                return;
+            }
+            const id = item.dataset.id;
+            if (id) {
+                toggle(id);
+            }
+        });
     });
 });
 
